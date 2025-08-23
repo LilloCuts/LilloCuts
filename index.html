@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LilloCuts | Barber Shop</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/jvFRstXT/Untitled.jpg">
+
+  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- SEO + Social Preview -->
+  <meta name="description" content="LilloCuts Barber Shop in Helwan ✂️ أفضل حلاق في حلوان | اتصل واحجز دلوقتي.">
+  <meta property="og:title" content="LilloCuts Barber Shop">
+  <meta property="og:description" content="✂️ أفضل حلاق في حلوان | احجز دلوقتي عبر واتساب أو اتصال.">
+  <meta property="og:image" content="https://i.ibb.co/jvFRstXT/Untitled.jpg">
+  <meta property="og:url" content="https://yourgithubpageurl">
+
   <style>
     body {
       margin: 0;
@@ -13,6 +26,23 @@
       color: #fff;
       text-align: center;
       overflow-x: hidden;
+    }
+
+    /* شاشة تحميل */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #loader img {
+      width: 200px;
+      border-radius: 20px;
+      animation: pulse 2s infinite alternate, glow 2s infinite alternate;
     }
 
     header {
@@ -27,7 +57,6 @@
       animation: pulse 3s infinite alternate;
     }
 
-    /* نيون */
     h1 {
       font-size: 3rem;
       margin: 15px 0 5px 0;
@@ -96,11 +125,11 @@
       animation: fadeInUp 3s ease-in-out;
     }
 
-    .call-btn, .whatsapp-btn, .book-btn {
+    .call-btn, .whatsapp-btn, .book-btn, .share-btn, .map-btn {
       display: inline-block;
       margin: 15px;
-      padding: 15px 40px;
-      font-size: 1.3rem;
+      padding: 15px 35px;
+      font-size: 1.2rem;
       border-radius: 15px;
       text-decoration: none;
       font-weight: bold;
@@ -109,39 +138,32 @@
     }
 
     .call-btn {
-      background: #ff0000;
-      color: #fff;
+      background: #ff0000; color: #fff;
       box-shadow: 0px 0px 20px #ff0000, 0px 0px 40px #ff0000;
     }
-
-    .call-btn:hover {
-      background: #fff;
-      color: #000;
-      box-shadow: 0px 0px 25px #fff, 0px 0px 50px #fff;
-    }
+    .call-btn:hover { background: #fff; color: #000; }
 
     .whatsapp-btn {
-      background: #25d366;
-      color: #fff;
+      background: #25d366; color: #fff;
       box-shadow: 0px 0px 20px #25d366, 0px 0px 40px #25d366;
     }
-
-    .whatsapp-btn:hover {
-      background: #1ebe5b;
-      box-shadow: 0px 0px 25px #25d366, 0px 0px 50px #25d366;
-    }
+    .whatsapp-btn:hover { background: #1ebe5b; }
 
     .book-btn {
-      background: #111;
-      color: #ff0000;
+      background: #111; color: #ff0000;
       border: 2px solid #ff0000;
       box-shadow: 0px 0px 20px #ff0000, 0px 0px 40px #ff0000;
     }
+    .book-btn:hover { background: #ff0000; color: #fff; }
 
-    .book-btn:hover {
-      background: #ff0000;
-      color: #fff;
-      box-shadow: 0px 0px 25px #ff0000, 0px 0px 50px #ff0000;
+    .share-btn {
+      background: #0077ff; color: #fff;
+      box-shadow: 0px 0px 20px #0077ff, 0px 0px 40px #0077ff;
+    }
+
+    .map-btn {
+      background: #ff9900; color: #fff;
+      box-shadow: 0px 0px 20px #ff9900, 0px 0px 40px #ff9900;
     }
 
     .map {
@@ -161,80 +183,47 @@
 
     /* انيميشن */
     @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #ff0000,
-                     0 0 15px #ff0000,
-                     0 0 30px #ff0000,
-                     0 0 50px #ff0000;
-      }
-      to {
-        text-shadow: 0 0 20px #ff4d4d,
-                     0 0 40px #ff1a1a,
-                     0 0 60px #ff0000,
-                     0 0 80px #b30000;
-      }
+      from { text-shadow: 0 0 5px #ff0000,0 0 15px #ff0000,0 0 30px #ff0000,0 0 50px #ff0000; }
+      to { text-shadow: 0 0 20px #ff4d4d,0 0 40px #ff1a1a,0 0 60px #ff0000,0 0 80px #b30000; }
     }
-
-    @keyframes shimmer {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
-    @keyframes pulse {
-      from { transform: scale(1); }
-      to { transform: scale(1.05); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideLeft {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+    @keyframes shimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+    @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.05); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
   </style>
 </head>
 <body>
-  <header>
-    <!-- صورة المحل -->
-    <img src="https://postimg.cc/K406jKq6" alt="LilloCuts Shop">
+  <!-- شاشة تحميل -->
+  <div id="loader">
+    <img src="https://i.ibb.co/jvFRstXT/Untitled.jpg" alt="LilloCuts Logo">
+  </div>
 
-    <!-- اسم المحل -->
+  <header>
+    <img src="https://i.ibb.co/jvFRstXT/Untitled.jpg" alt="LilloCuts Barber Shop in Helwan">
     <h1>LilloCuts</h1>
     <h2>Barber Shop</h2>
-
-    <!-- سطر ترحيبي متحرك -->
     <div class="marquee">✂️ Welcome to LilloCuts – The Ultimate Barber Experience ✂️</div>
-
-    <!-- العنوان والتليفون -->
     <div class="info">
       📍 53 street Mohmed said ahmed / Helwan <br>
       📞 01145651307
     </div>
   </header>
 
-  <!-- روابط السوشيال ميديا -->
   <div class="socials">
     <a href="https://wa.me/201064396010" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
     <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 
-  <!-- الأزرار -->
   <div class="btns">
     <a class="call-btn" href="tel:01145651307">📞 اتصل بنا</a>
     <a class="whatsapp-btn" href="https://wa.me/201064396010" target="_blank">💬 واتساب</a>
     <a class="book-btn" href="https://wa.me/201064396010?text=أهلاً، عاوز أحجز معاد في LilloCuts." target="_blank">✂️ احجز الآن</a>
+    <a class="map-btn" href="https://maps.google.com/?q=53 street Mohmed said ahmed / Helwan" target="_blank">📍 Directions</a>
+    <a class="share-btn" href="https://wa.me/?text=Check%20out%20LilloCuts%20Barber%20Shop:%20https://yourgithubpageurl" target="_blank">🔗 شارك</a>
   </div>
 
-  <!-- خريطة جوجل -->
   <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.416123!2d31.334!3d29.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2z2YXYrNmF2Lkg2KfZhNis2YjYp9ix2Kk!5e0!3m2!1sen!2seg!4v1691412345678"
       width="90%" height="300" style="border:0; border-radius:15px; box-shadow:0 0 20px #ff0000;" allowfullscreen="" loading="lazy"></iframe>
@@ -243,5 +232,12 @@
   <footer>
     © 2025 LilloCuts Barber Shop - All Rights Reserved
   </footer>
+
+  <script>
+    // إخفاء شاشة التحميل بعد تحميل الصفحة
+    window.onload = function() {
+      document.getElementById("loader").style.display = "none";
+    }
+  </script>
 </body>
 </html>
