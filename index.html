@@ -4,110 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LilloCuts | Barber Shop</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://i.ibb.co/jvFRstXT/Untitled.jpg">
-
-  <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- SEO + Social Preview -->
-  <meta name="description" content="LilloCuts Barber Shop in Helwan ✂️ أفضل حلاق في حلوان | اتصل واحجز دلوقتي.">
-  <meta property="og:title" content="LilloCuts Barber Shop">
-  <meta property="og:description" content="✂️ أفضل حلاق في حلوان | احجز دلوقتي عبر واتساب أو اتصال.">
-  <meta property="og:image" content="https://i.ibb.co/jvFRstXT/Untitled.jpg">
-  <meta property="og:url" content="https://yourgithubpageurl">
-
   <style>
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: #000;
+      background: linear-gradient(135deg, #000, #111);
       color: #fff;
       text-align: center;
-      overflow-x: hidden;
-    }
-
-    /* شاشة تحميل */
-    #loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    #loader img {
-      width: 200px;
-      border-radius: 20px;
-      animation: pulse 2s infinite alternate, glow 2s infinite alternate;
     }
 
     header {
       padding: 40px 20px 20px 20px;
-      animation: fadeIn 2s ease-in-out;
     }
 
     header img {
-      width: 230px;
+      width: 240px;
       border-radius: 20px;
-      box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.9);
-      animation: pulse 3s infinite alternate;
+      animation: glow 2.5s infinite alternate, pulse 3s infinite alternate;
     }
 
     h1 {
       font-size: 3rem;
-      margin: 15px 0 5px 0;
+      margin: 15px 0 10px 0;
       color: #ff0000;
-      font-weight: bold;
-      text-shadow: 0 0 10px #ff0000,
-                   0 0 20px #ff0000,
-                   0 0 40px #ff0000,
-                   0 0 80px #ff0000;
-      background: linear-gradient(90deg, #ff0000, #ff4d4d, #ff0000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 200% auto;
-      animation: glow 2s ease-in-out infinite alternate, shimmer 4s linear infinite;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      color: #ff4d4d;
-      margin-bottom: 25px;
-      text-shadow: 0 0 5px #ff0000,
-                   0 0 15px #ff0000,
-                   0 0 30px #ff0000;
-      animation: glow 3s ease-in-out infinite alternate;
-    }
-
-    .marquee {
-      font-size: 1.2rem;
-      color: #ff4d4d;
-      margin: 15px 0;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      animation: slideLeft 15s linear infinite;
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff1a1a, 0 0 50px #b30000;
+      animation: flicker 3s infinite;
     }
 
     .info {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #ddd;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      animation: fadeInUp 2s ease-in-out;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .info a {
+      color: #ff0000;
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 8px #ff0000;
+      transition: 0.3s;
+    }
+
+    .info a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #ff0000, 0 0 25px #ff1a1a;
     }
 
     .socials {
-      margin: 30px 0;
-      animation: fadeInUp 2.5s ease-in-out;
+      margin-top: 25px;
+      animation: fadeIn 3s ease-in-out;
     }
 
     .socials a {
-      color: white;
+      color: #ff0000;
       font-size: 2.5rem;
       margin: 0 20px;
       text-shadow: 0 0 10px #ff0000;
@@ -115,129 +67,93 @@
     }
 
     .socials a:hover {
-      color: #ff0000;
-      text-shadow: 0 0 20px #ff0000;
-      transform: scale(1.2) rotate(10deg);
+      color: #fff;
+      text-shadow: 0 0 20px #ff0000, 0 0 40px #ff1a1a;
+      transform: scale(1.2);
     }
 
-    .btns {
-      margin-top: 20px;
-      animation: fadeInUp 3s ease-in-out;
-    }
-
-    .call-btn, .whatsapp-btn, .book-btn, .share-btn, .map-btn {
+    .call-btn {
       display: inline-block;
-      margin: 15px;
+      margin-top: 35px;
       padding: 15px 35px;
-      font-size: 1.2rem;
+      background: #ff0000;
+      color: #fff;
+      font-size: 1.3rem;
       border-radius: 15px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0px 0px 20px #ff0000, 0px 0px 40px #b30000;
       transition: 0.3s;
       animation: pulse 2.5s infinite alternate;
     }
 
-    .call-btn {
-      background: #ff0000; color: #fff;
-      box-shadow: 0px 0px 20px #ff0000, 0px 0px 40px #ff0000;
-    }
-    .call-btn:hover { background: #fff; color: #000; }
-
-    .whatsapp-btn {
-      background: #25d366; color: #fff;
-      box-shadow: 0px 0px 20px #25d366, 0px 0px 40px #25d366;
-    }
-    .whatsapp-btn:hover { background: #1ebe5b; }
-
-    .book-btn {
-      background: #111; color: #ff0000;
-      border: 2px solid #ff0000;
-      box-shadow: 0px 0px 20px #ff0000, 0px 0px 40px #ff0000;
-    }
-    .book-btn:hover { background: #ff0000; color: #fff; }
-
-    .share-btn {
-      background: #0077ff; color: #fff;
-      box-shadow: 0px 0px 20px #0077ff, 0px 0px 40px #0077ff;
-    }
-
-    .map-btn {
-      background: #ff9900; color: #fff;
-      box-shadow: 0px 0px 20px #ff9900, 0px 0px 40px #ff9900;
-    }
-
-    .map {
-      margin: 40px 0;
-      animation: fadeInUp 3.5s ease-in-out;
+    .call-btn:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0px 0px 25px #fff, 0px 0px 50px #ff0000;
     }
 
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       padding: 15px;
       font-size: 0.9rem;
       color: #aaa;
-      border-top: 1px solid #333;
       background: #0a0a0a;
-      box-shadow: 0 -5px 20px rgba(255, 0, 0, 0.5);
+      border-top: 1px solid #222;
     }
 
-    /* انيميشن */
     @keyframes glow {
-      from { text-shadow: 0 0 5px #ff0000,0 0 15px #ff0000,0 0 30px #ff0000,0 0 50px #ff0000; }
-      to { text-shadow: 0 0 20px #ff4d4d,0 0 40px #ff1a1a,0 0 60px #ff0000,0 0 80px #b30000; }
+      from { filter: drop-shadow(0 0 5px #ff0000); }
+      to { filter: drop-shadow(0 0 25px #ff1a1a); }
     }
-    @keyframes shimmer { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
-    @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.05); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes slideLeft { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.5;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
-  <!-- شاشة تحميل -->
-  <div id="loader">
-    <img src="https://i.ibb.co/jvFRstXT/Untitled.jpg" alt="LilloCuts Logo">
-  </div>
-
   <header>
-    <img src="https://i.ibb.co/jvFRstXT/Untitled.jpg" alt="LilloCuts Barber Shop in Helwan">
-    <h1>LilloCuts</h1>
-    <h2>Barber Shop</h2>
-    <div class="marquee">✂️ Welcome to LilloCuts – The Ultimate Barber Experience ✂️</div>
+    <!-- لوجو المحل -->
+    <img src="https://i.ibb.co/sJPh15sf/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
+    
+    <!-- اسم المحل -->
+    <h1>LilloCuts Barber Shop</h1>
+
+    <!-- العنوان والتليفونات -->
     <div class="info">
       📍 53 street Mohmed said ahmed / Helwan <br>
-      📞 01145651307
+      📞 جديد: <a href="tel:+201064396010">+201064396010</a> | 
+      <a href="https://wa.me/201064396010" target="_blank">واتساب</a> <br>
+      📞 قديم: <a href="tel:01145651307">01145651307</a> | 
+      <a href="https://wa.me/201145651307" target="_blank">واتساب</a>
     </div>
   </header>
 
+  <!-- روابط السوشيال -->
   <div class="socials">
     <a href="https://wa.me/201064396010" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
     <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
   </div>
 
-  <div class="btns">
-    <a class="call-btn" href="tel:01145651307">📞 اتصل بنا</a>
-    <a class="whatsapp-btn" href="https://wa.me/201064396010" target="_blank">💬 واتساب</a>
-    <a class="book-btn" href="https://wa.me/201064396010?text=أهلاً، عاوز أحجز معاد في LilloCuts." target="_blank">✂️ احجز الآن</a>
-    <a class="map-btn" href="https://maps.google.com/?q=53 street Mohmed said ahmed / Helwan" target="_blank">📍 Directions</a>
-    <a class="share-btn" href="https://wa.me/?text=Check%20out%20LilloCuts%20Barber%20Shop:%20https://yourgithubpageurl" target="_blank">🔗 شارك</a>
-  </div>
-
-  <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.416123!2d31.334!3d29.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2z2YXYrNmF2Lkg2KfZhNis2YjYp9ix2Kk!5e0!3m2!1sen!2seg!4v1691412345678"
-      width="90%" height="300" style="border:0; border-radius:15px; box-shadow:0 0 20px #ff0000;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
+  <!-- زر الاتصال -->
+  <a class="call-btn" href="tel:+201064396010">📞 اتصل بنا</a>
 
   <footer>
     © 2025 LilloCuts Barber Shop - All Rights Reserved
   </footer>
-
-  <script>
-    // إخفاء شاشة التحميل بعد تحميل الصفحة
-    window.onload = function() {
-      document.getElementById("loader").style.display = "none";
-    }
-  </script>
 </body>
 </html>
