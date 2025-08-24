@@ -1,198 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LilloCuts Barber Shop</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<div class="mt-6 space-x-4 flex justify-center">
+  <!-- Book Now Button -->
+  <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" 
+     target="_blank" 
+     class="flex items-center gap-2 justify-center bg-red-600 px-6 py-3 rounded-full font-semibold text-white hover:bg-red-700 hover:scale-110 transition-transform shadow-lg">
+     <i class='bx bx-calendar text-xl'></i> Book Now
+  </a>
 
-  <!-- Animate on Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Get Directions Button Neon -->
+  <a href="https://www.google.com/maps?q=29.8473316,31.3270432" 
+     target="_blank" 
+     class="flex items-center gap-2 justify-center px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-transform neon-btn hover:scale-110">
+     <i class='bx bx-map text-xl'></i> Get Directions
+  </a>
+</div>
 
-  <style>
-    /* Neon effect for LilloCuts */
-    .neon {
-      color: #ff1a1a;
-      text-shadow:
-        0 0 5px #ff1a1a,
-        0 0 10px #ff1a1a,
-        0 0 20px #ff1a1a,
-        0 0 40px #ff0000;
-    }
-
-    /* Neon effect for buttons */
-    .neon-btn {
-      background-color: #1a1a1a;
-      border: 2px solid #ff1a1a;
-      text-shadow:
-        0 0 5px #ff1a1a,
-        0 0 10px #ff1a1a,
-        0 0 20px #ff1a1a;
-      box-shadow:
-        0 0 5px #ff1a1a,
-        0 0 10px #ff1a1a,
-        0 0 20px #ff1a1a,
-        0 0 40px #ff1a1a inset;
-      transition: all 0.3s ease;
-    }
-    .neon-btn:hover {
-      background-color: #ff1a1a;
-      color: #fff;
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #fff;
-      box-shadow:
-        0 0 10px #ff1a1a,
-        0 0 20px #ff1a1a,
-        0 0 30px #ff1a1a,
-        0 0 50px #ff1a1a inset;
-    }
-
-    /* Neon effect for social icons */
-    .social-neon {
-      text-shadow:
-        0 0 5px currentColor,
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 40px currentColor;
-      transition: transform 0.3s, text-shadow 0.3s;
-    }
-    .social-neon:hover {
-      transform: scale(1.3);
-      text-shadow:
-        0 0 10px currentColor,
-        0 0 20px currentColor,
-        0 0 30px currentColor,
-        0 0 50px currentColor;
-    }
-
-    /* Neon effect for QR Code */
-    .qr-neon {
-      border: 4px solid #ff1a1a;
-      box-shadow:
-        0 0 10px #ff1a1a,
-        0 0 20px #ff1a1a,
-        0 0 30px #ff1a1a,
-        0 0 50px #ff1a1a inset;
-      border-radius: 12px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .qr-neon:hover {
-      transform: scale(1.1);
-      box-shadow:
-        0 0 20px #ff1a1a,
-        0 0 40px #ff1a1a,
-        0 0 60px #ff1a1a,
-        0 0 100px #ff1a1a inset;
-    }
-  </style>
-</head>
-<body class="bg-black text-white font-sans">
-
-  <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-screen flex items-center justify-center" 
-           style="background-image: url('https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg');">
-    <div class="absolute inset-0 bg-black/80"></div>
-    <div class="relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1200">
-      <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" 
-           alt="Logo" class="mx-auto w-40 rounded-full border-4 border-red-600 shadow-xl animate-pulse">
-      <h1 class="text-6xl font-extrabold mt-6 neon">LilloCuts</h1>
-      <p class="text-xl mt-2 tracking-widest text-gray-300">Barber Shop</p>
-      <p class="mt-4 text-gray-400 italic">Sharp Cuts, Sharp Looks ✂️</p>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
-      <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1200">
-        <img src="https://i.postimg.cc/mkR0D74r/Screenshot-2025-08-24-at-06-12-32-Instagram.png" 
-             alt="Owner" class="rounded-2xl shadow-xl border-4 border-red-600">
-      </div>
-      <div class="md:w-1/2 space-y-4" data-aos="fade-left" data-aos-duration="1200">
-        <h2 class="text-3xl font-bold text-red-600">About Us</h2>
-        <p class="text-gray-300 leading-relaxed">
-          At <span class="text-red-500 font-bold">LilloCuts</span>, 
-          we deliver modern and classic styles with precision. Our mission is to make every client feel 
-          confident, sharp, and fresh with every cut.
-        </p>
-        <a href="tel:01145651307" class="inline-block bg-red-600 px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition">📞 Call Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section class="py-16 px-6 bg-gray-900">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-10">Gallery</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <img src="https://i.postimg.cc/zDkpns5v/Screenshot-2025-08-24-at-05-45-21-Instagram.png" 
-           class="rounded-xl shadow-lg transform transition hover:scale-105" data-aos="zoom-in">
-      <img src="https://i.postimg.cc/sgMcC1WG/Screenshot-2025-08-24-at-05-43-04-Instagram.png" 
-           class="rounded-xl shadow-lg transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
-      <img src="https://i.postimg.cc/DZPQPX9H/Screenshot-2025-08-24-at-05-41-31-Instagram.png" 
-           class="rounded-xl shadow-lg transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="400">
-      <img src="https://i.postimg.cc/SRQ6TKqs/Screenshot-2025-08-24-at-05-40-38-Instagram.png" 
-           class="rounded-xl shadow-lg transform transition hover:scale-105" data-aos="zoom-in" data-aos-delay="600">
-    </div>
-  </section>
-
-  <!-- Working Hours -->
-  <section class="py-16 px-6">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-6">Working Hours</h2>
-    <p class="text-center text-gray-300" data-aos="fade-up">Everyday: <span class="font-semibold">3:00 PM – 12:00 AM</span></p>
-  </section>
-
-  <!-- Contact Section with Neon Buttons -->
-  <section class="py-16 px-6 bg-gradient-to-b from-gray-900 to-black">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-10">Contact Us</h2>
-    <div class="text-center space-y-4" data-aos="fade-up">
-      <p><i class='bx bx-phone text-red-500'></i> 01145651307 / 01064396010</p>
-      <p><i class='bx bx-map text-red-500'></i> 53 Mohamed Said Ahmed St, Helwan</p>
-
-      <!-- Social Media Neon Icons -->
-      <div class="flex justify-center gap-6 mt-4 text-3xl">
-        <a href="https://wa.me/201145651307" target="_blank" class="social-neon text-green-500">
-           <i class='bx bxl-whatsapp'></i>
-        </a>
-
-        <a href="https://www.tiktok.com/@lillo_cuts" target="_blank" class="social-neon text-pink-500">
-           <i class='bx bxl-tiktok'></i>
-        </a>
-
-        <a href="https://www.instagram.com/lillo_cuts" target="_blank" class="social-neon text-red-500">
-           <i class='bx bxl-instagram'></i>
-        </a>
-      </div>
-
-      <!-- Book Now & Get Directions Neon Buttons -->
-      <div class="mt-6 space-x-4 flex justify-center flex-wrap gap-4">
-        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" 
-           target="_blank" 
-           class="flex items-center gap-2 justify-center px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-transform neon-btn hover:scale-110">
-           <i class='bx bx-calendar text-xl'></i> Book Now
-        </a>
-
-        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" 
-           target="_blank" 
-           class="flex items-center gap-2 justify-center px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-transform neon-btn hover:scale-110">
-           <i class='bx bx-map text-xl'></i> Get Directions
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer with Neon QR Code -->
-  <footer class="bg-black py-6 text-center border-t border-gray-800">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://LilloCuts.github.io/lillocuts" 
-         alt="QR Code" class="mx-auto mb-4 animate-pulse qr-neon">
-    <p class="text-gray-500">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
-  </footer>
-
-  <script>
-    AOS.init();
-  </script>
-</body>
-</html>
+<style>
+/* Neon effect for Get Directions button */
+.neon-btn {
+  background-color: #1a1a1a;
+  border: 2px solid #ff1a1a;
+  text-shadow:
+    0 0 5px #ff1a1a,
+    0 0 10px #ff1a1a,
+    0 0 20px #ff1a1a;
+  box-shadow:
+    0 0 5px #ff1a1a,
+    0 0 10px #ff1a1a,
+    0 0 20px #ff1a1a,
+    0 0 40px #ff1a1a inset;
+}
+.neon-btn:hover {
+  background-color: #ff1a1a;
+  color: #fff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 30px #fff;
+  box-shadow:
+    0 0 10px #ff1a1a,
+    0 0 20px #ff1a1a,
+    0 0 30px #ff1a1a,
+    0 0 40px #ff1a1a inset;
+}
+</style>
