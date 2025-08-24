@@ -10,8 +10,8 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-      color: #fff;
+      background: #0a0a0a; /* خلفية أغمق */
+      color: #e0e0e0; /* رمادي فاتح مريح */
       text-align: center;
     }
 
@@ -22,16 +22,31 @@
     header img {
       width: 140px;
       border-radius: 50%;
-      border: 3px solid #e50914;
+      border: 2px solid #b1060f; /* أحمر أغمق */
       margin-bottom: 20px;
+      box-shadow: 0px 0px 20px rgba(177,6,15,0.3);
     }
 
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
       font-weight: 800;
-      color: #e50914;
-      margin: 10px 0;
+      color: #c20c18; /* أحمر داكن */
+      margin: 10px 0 5px;
+    }
+
+    header h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #888; /* رمادي ناعم */
+      margin: 0 0 15px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #aaa;
     }
 
     .buttons {
@@ -49,17 +64,18 @@
       padding: 14px;
       border-radius: 30px;
       text-decoration: none;
-      color: #fff;
-      background: #e50914;
+      color: #e0e0e0;
+      background: #1a1a1a; /* غامق */
+      border: 1px solid #c20c18;
       font-weight: bold;
       transition: 0.3s;
     }
 
     .btn:hover {
-      background: #fff;
-      color: #e50914;
+      background: #c20c18;
+      color: #fff;
       transform: translateY(-3px);
-      box-shadow: 0px 4px 15px rgba(229,9,20,0.6);
+      box-shadow: 0px 4px 15px rgba(194,12,24,0.6);
     }
 
     .social {
@@ -68,7 +84,7 @@
 
     .social a {
       text-decoration: none;
-      color: #e50914;
+      color: #c20c18;
       font-size: 2rem;
       margin: 0 12px;
       transition: 0.3s;
@@ -76,7 +92,7 @@
 
     .social a:hover {
       color: #fff;
-      transform: scale(1.2);
+      transform: scale(1.15);
     }
 
     .map {
@@ -84,15 +100,15 @@
       max-width: 600px;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0px 0px 15px rgba(229,9,20,0.4);
+      box-shadow: 0px 0px 15px rgba(194,12,24,0.3);
     }
 
     footer {
       background: #111;
       padding: 15px;
       margin-top: 30px;
-      font-size: 0.95rem;
-      opacity: 0.85;
+      font-size: 0.9rem;
+      color: #777;
     }
 
     /* Fade-in Animation */
@@ -111,6 +127,7 @@
   <header>
     <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
     <h1>LilloCuts</h1>
+    <h2>Barber Shop</h2>
     <p>Your Style, Our Passion ✂️</p>
   </header>
 
