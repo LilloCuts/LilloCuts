@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LilloCuts | Barber Shop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -20,28 +20,29 @@
     }
 
     header img {
-      width: 140px;
+      width: 150px;
       border-radius: 50%;
-      border: 2px solid #b1060f;
+      border: 3px solid #b1060f;
       margin-bottom: 20px;
-      box-shadow: 0px 0px 20px rgba(177,6,15,0.3);
+      box-shadow: 0px 0px 25px rgba(177,6,15,0.4);
     }
 
     header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 800;
+      font-family: 'Anton', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
       color: #c20c18;
       margin: 10px 0 5px;
+      letter-spacing: 2px;
     }
 
     header h2 {
-      font-family: 'Montserrat', sans-serif;
       font-size: 1.2rem;
       font-weight: 600;
       color: #888;
       margin: 0 0 15px;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
     }
 
     header p {
@@ -95,15 +96,82 @@
       transform: scale(1.15);
     }
 
-    .map {
-      margin: 40px auto;
-      max-width: 600px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0px 0px 15px rgba(194,12,24,0.3);
+    /* Services Section */
+    .services {
+      margin: 50px auto;
+      max-width: 800px;
+    }
+    .services h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: #c20c18;
+      margin-bottom: 20px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .services li {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      width: 200px;
+      box-shadow: 0px 0px 15px rgba(194,12,24,0.25);
     }
 
-    /* Working Hours Section */
+    /* Gallery */
+    .gallery {
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+    .gallery h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: #c20c18;
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(194,12,24,0.4);
+    }
+
+    /* Reviews */
+    .reviews {
+      margin: 50px auto;
+      max-width: 800px;
+    }
+    .reviews h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 2rem;
+      color: #c20c18;
+      margin-bottom: 20px;
+    }
+    .review {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 10px auto;
+      max-width: 600px;
+      font-style: italic;
+      box-shadow: 0px 0px 15px rgba(194,12,24,0.25);
+    }
+
+    /* Working Hours */
     .hours {
       margin: 50px auto;
       max-width: 400px;
@@ -112,18 +180,25 @@
       border-radius: 15px;
       box-shadow: 0px 0px 15px rgba(194,12,24,0.25);
     }
-
     .hours h3 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Anton', sans-serif;
       font-size: 1.5rem;
       color: #c20c18;
       margin-bottom: 10px;
     }
-
     .hours p {
       font-size: 1.1rem;
       color: #ccc;
       margin: 0;
+    }
+
+    /* Map */
+    .map {
+      margin: 40px auto;
+      max-width: 600px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 0px 15px rgba(194,12,24,0.3);
     }
 
     footer {
@@ -133,8 +208,12 @@
       font-size: 0.9rem;
       color: #777;
     }
+    footer img {
+      width: 80px;
+      margin-top: 10px;
+    }
 
-    /* Fade-in Animation */
+    /* Animation */
     section, header, footer {
       animation: fadeIn 1.2s ease;
     }
@@ -158,14 +237,44 @@
   <section class="buttons">
     <a class="btn" href="tel:+201145651307"><i class="fas fa-phone"></i> Call: 01145651307</a>
     <a class="btn" href="tel:+201064396010"><i class="fas fa-phone"></i> Call: 01064396010</a>
-    <a class="btn" href="https://wa.me/201145651307" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 1</a>
-    <a class="btn" href="https://wa.me/201064396010" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 2</a>
+    <a class="btn" href="https://wa.me/201145651307?text=Hi,+I+want+to+book+an+appointment+at+LilloCuts" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 1</a>
+    <a class="btn" href="https://wa.me/201064396010?text=Hi,+I+want+to+book+an+appointment+at+LilloCuts" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 2</a>
+    <a class="btn" href="https://maps.google.com/?q=53%20Mohamed%20Said%20Ahmed%20Street%20Helwan" target="_blank"><i class="fas fa-location-dot"></i> Get Directions</a>
   </section>
 
   <!-- Social Icons -->
   <section class="social">
     <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
     <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>✂️ Haircut</li>
+      <li>🧔 Beard Trim</li>
+      <li>💇 Hair Styling</li>
+      <li>👦 Kids Haircut</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <h3>Our Work</h3>
+    <div class="gallery-grid">
+      <img src="https://i.postimg.cc/zDkpns5v/Screenshot-2025-08-24-at-05-45-21-Instagram.png" alt="Haircut 1">
+      <img src="https://i.postimg.cc/sgMcC1WG/Screenshot-2025-08-24-at-05-43-04-Instagram.png" alt="Haircut 2">
+      <img src="https://i.postimg.cc/DZPQPX9H/Screenshot-2025-08-24-at-05-41-31-Instagram.png" alt="Haircut 3">
+      <img src="https://i.postimg.cc/SRQ6TKqs/Screenshot-2025-08-24-at-05-40-38-Instagram.png" alt="Haircut 4">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews">
+    <h3>What Our Clients Say</h3>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ “Best barber in Helwan! Professional and friendly.”</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️ “Amazing haircut and great atmosphere.”</div>
   </section>
 
   <!-- Working Hours -->
@@ -185,6 +294,8 @@
   <!-- Footer -->
   <footer>
     📍 53 Mohamed Said Ahmed Street, Helwan — All Rights Reserved © LilloCuts
+    <br>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://your-github-pages-link.com&size=100x100" alt="QR Code">
   </footer>
 
 </body>
