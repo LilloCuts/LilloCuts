@@ -68,6 +68,26 @@
         0 0 30px currentColor,
         0 0 50px currentColor;
     }
+
+    /* Neon effect for QR Code */
+    .qr-neon {
+      border: 4px solid #ff1a1a;
+      box-shadow:
+        0 0 10px #ff1a1a,
+        0 0 20px #ff1a1a,
+        0 0 30px #ff1a1a,
+        0 0 50px #ff1a1a inset;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .qr-neon:hover {
+      transform: scale(1.1);
+      box-shadow:
+        0 0 20px #ff1a1a,
+        0 0 40px #ff1a1a,
+        0 0 60px #ff1a1a,
+        0 0 100px #ff1a1a inset;
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -149,14 +169,12 @@
 
       <!-- Book Now & Get Directions Neon Buttons -->
       <div class="mt-6 space-x-4 flex justify-center flex-wrap gap-4">
-        <!-- Book Now Button Neon -->
         <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" 
            target="_blank" 
            class="flex items-center gap-2 justify-center px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-transform neon-btn hover:scale-110">
            <i class='bx bx-calendar text-xl'></i> Book Now
         </a>
 
-        <!-- Get Directions Button Neon -->
         <a href="https://www.google.com/maps?q=29.8473316,31.3270432" 
            target="_blank" 
            class="flex items-center gap-2 justify-center px-6 py-3 rounded-full font-semibold text-white shadow-lg transition-transform neon-btn hover:scale-110">
@@ -166,10 +184,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer with Neon QR Code -->
   <footer class="bg-black py-6 text-center border-t border-gray-800">
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://LilloCuts.github.io/lillocuts" 
-         alt="QR Code" class="mx-auto mb-4 animate-pulse">
+         alt="QR Code" class="mx-auto mb-4 animate-pulse qr-neon">
     <p class="text-gray-500">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
   </footer>
 
