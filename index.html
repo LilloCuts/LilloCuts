@@ -9,8 +9,10 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #000000, #1a1a1a, #330000);
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #330000, #111);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
       color: #fff;
       text-align: center;
       overflow-x: hidden;
@@ -18,6 +20,33 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+    }
+
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      animation: fadeOut 2s ease 2.5s forwards;
+    }
+
+    #splash img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #e50914;
+      animation: bounceIn 2s ease;
+    }
+
+    #splash h2 {
+      color: #e50914;
+      margin-top: 15px;
+      font-size: 1.8rem;
     }
 
     .card {
@@ -29,6 +58,11 @@
       width: 90%;
       box-shadow: 0px 0px 20px rgba(229,9,20,0.6);
       animation: fadeIn 1.5s ease-in-out;
+      display: none;
+    }
+
+    .card.show {
+      display: block;
     }
 
     .card img {
@@ -62,13 +96,14 @@
       background: #e50914;
       font-weight: bold;
       transition: 0.3s;
-      box-shadow: 0px 0px 10px rgba(229,9,20,0.7);
+      box-shadow: 0px 0px 15px rgba(229,9,20,0.7);
     }
 
     .btn:hover {
       background: #fff;
       color: #e50914;
       transform: scale(1.05);
+      box-shadow: 0px 0px 25px rgba(229,9,20,1);
     }
 
     .social-icons {
@@ -96,7 +131,19 @@
       animation: fadeIn 3s ease-in-out;
     }
 
+    .map {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 0px 10px rgba(229,9,20,0.5);
+    }
+
     /* Animations */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideDown { from { transform: translateY(-40px); opacity: 0;} to { transform: translateY(0); opacity: 1;} }
     @keyframes bounceIn { 
@@ -106,10 +153,18 @@
       100% { transform: scale(1);}
     }
     @keyframes zoomIn { from { transform: scale(0.5); opacity: 0;} to { transform: scale(1); opacity: 1;} }
+    @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
   </style>
 </head>
 <body>
-  <div class="card">
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
+    <h2>LilloCuts</h2>
+  </div>
+
+  <!-- Main Card -->
+  <div class="card" id="mainCard">
     <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
     <h1>LilloCuts</h1>
 
@@ -128,7 +183,21 @@
     <footer>
       📍 53 Mohamed Said Ahmed Street, Helwan
     </footer>
+
+    <!-- Google Map -->
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps?q=Helwan%20Egypt&output=embed" 
+        width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen="">
+      </iframe>
+    </div>
   </div>
+
+  <script>
+    // بعد ما الـ Splash Screen تخلص، أظهر الكارد
+    setTimeout(() => {
+      document.getElementById("mainCard").classList.add("show");
+    }, 2500);
+  </script>
 </body>
 </html>
-
