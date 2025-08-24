@@ -1,467 +1,104 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LilloCuts - صالون حلاقة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Base styles and reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
-        
-        body {
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255, 0, 0, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 0, 0, 0.05) 0%, transparent 20%);
-        }
-        
-        /* Neon text effects */
-        .neon-text {
-            color: #fff;
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #fff,
-                0 0 20px #ff0000,
-                0 0 30px #ff0000,
-                0 0 40px #ff0000;
-            animation: pulsate 2s infinite alternate;
-        }
-        
-        @keyframes pulsate {
-            0% {
-                text-shadow: 
-                    0 0 5px #fff,
-                    0 0 10px #fff,
-                    0 0 20px #ff0000,
-                    0 0 30px #ff0000,
-                    0 0 40px #ff0000;
-            }
-            100% {
-                text-shadow: 
-                    0 0 10px #fff,
-                    0 0 15px #fff,
-                    0 0 25px #ff0000,
-                    0 0 40px #ff0000,
-                    0 0 60px #ff0000;
-            }
-        }
-        
-        /* Header and hero section */
-        .hero {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .hero-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 
-                0 0 10px rgba(255, 0, 0, 0.5),
-                0 0 20px rgba(255, 0, 0, 0.3),
-                0 0 30px rgba(255, 0, 0, 0.2);
-            margin-bottom: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .shop-name {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: 3px;
-            animation: slideInFromTop 1s ease-out;
-        }
-        
-        /* Contact section */
-        .contact-section {
-            padding: 3rem 2rem;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-top: 1px solid rgba(255, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 1.2rem;
-            padding: 1rem;
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-        }
-        
-        /* Social media section */
-        .social-section {
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .social-icon {
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: rgba(20, 20, 20, 0.8);
-            color: #fff;
-            font-size: 2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 0, 0, 0.5);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: 
-                0 0 10px rgba(255, 0, 0, 0.7),
-                0 0 20px rgba(255, 0, 0, 0.5),
-                0 0 30px rgba(255, 0, 0, 0.3);
-            color: #ff0000;
-        }
-        
-        /* Call to action button */
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            margin-top: 2rem;
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #ff0000;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.4), transparent);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        
-        .cta-button:hover {
-            color: #000;
-            background-color: #ff0000;
-            box-shadow: 
-                0 0 10px rgba(255, 0, 0, 0.7),
-                0 0 30px rgba(255, 0, 0, 0.5),
-                0 0 50px rgba(255, 0, 0, 0.3);
-        }
-        
-        .cta-button:hover:before {
-            left: 100%;
-        }
-        
-        /* Address section */
-        .address-section {
-            padding: 3rem 2rem;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-top: 1px solid rgba(255, 0, 0, 0.3);
-        }
-        
-        .address {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-            animation: fadeIn 2s ease-out;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid rgba(255, 0, 0, 0.2);
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideInFromTop {
-            from { 
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes neonPulse {
-            0%, 100% {
-                box-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(255, 0, 0, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(255, 0, 0, 0.9), 0 0 30px rgba(255, 0, 0, 0.7);
-            }
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .shop-name {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .contact-item {
-                font-size: 1rem;
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .social-icons {
-                flex-wrap: wrap;
-            }
-            
-            .social-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .hero-image {
-                max-width: 100%;
-            }
-        }
-        
-        /* Decorative elements */
-        .neon-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #ff0000, transparent);
-            margin: 2rem auto;
-            max-width: 300px;
-            animation: neonPulse 2s infinite;
-        }
-        
-        /* Communication Icons Section */
-        .communication-section {
-            padding: 3rem 2rem;
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .communication-icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .comm-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s ease;
-            width: 100px;
-        }
-        
-        .comm-icon:hover {
-            transform: translateY(-5px);
-        }
-        
-        .icon-circle {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 0, 0, 0.5);
-        }
-        
-        .comm-icon:hover .icon-circle {
-            background-color: rgba(255, 0, 0, 0.2);
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-            color: #ff0000;
-        }
-        
-        .icon-label {
-            font-size: 0.9rem;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LilloCuts | Barber Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header img {
+      width: 180px;
+      border-radius: 50%;
+      animation: bounceIn 2s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e50914; /* Red */
+      font-weight: bold;
+      margin-top: 10px;
+      animation: slideDown 2s ease-in-out;
+    }
+
+    .contact {
+      margin: 30px 0;
+      font-size: 1.2rem;
+      line-height: 2;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+      animation: zoomIn 2s ease-in-out;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: #e50914;
+      font-size: 2rem;
+      margin: 0 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.3);
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 1rem;
+      opacity: 0.8;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0;} to { transform: translateY(0); opacity: 1;} }
+    @keyframes bounceIn { 
+      0% { transform: scale(0.3); opacity: 0;}
+      50% { transform: scale(1.1); opacity: 1;}
+      70% { transform: scale(0.9);}
+      100% { transform: scale(1);}
+    }
+    @keyframes zoomIn { from { transform: scale(0.5); opacity: 0;} to { transform: scale(1); opacity: 1;} }
+  </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Barber Shop" class="hero-image">
-        <h1 class="shop-name neon-text">LilloCuts</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem; animation: fadeIn 2s ease-out;">تجربة حلاقة استثنائية</p>
-        <a href="https://wa.me/201145651307" class="cta-button">احجز الآن</a>
-    </section>
-    
-    <div class="neon-line"></div>
-    
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <h2 class="section-title neon-text">اتصل بنا</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+201064396010</span>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-whatsapp"></i>
-                <span>+201145651307</span>
-            </div>
-        </div>
-    </section>
-    
-    <div class="neon-line"></div>
-    
-    <!-- Communication Icons Section -->
-    <section class="communication-section">
-        <h2 class="section-title neon-text">تواصل معنا</h2>
-        <div class="communication-icons">
-            <a href="tel:+201064396010" class="comm-icon">
-                <div class="icon-circle">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <span class="icon-label">اتصال</span>
-            </a>
-            
-            <a href="https://wa.me/201145651307" class="comm-icon">
-                <div class="icon-circle">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <span class="icon-label">واتساب</span>
-            </a>
-            
-            <a href="https://www.tiktok.com/@lillo_cuts" class="comm-icon">
-                <div class="icon-circle">
-                    <i class="fab fa-tiktok"></i>
-                </div>
-                <span class="icon-label">تيك توك</span>
-            </a>
-            
-            <a href="https://www.instagram.com/lillo_cuts" class="comm-icon">
-                <div class="icon-circle">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <span class="icon-label">انستجرام</span>
-            </a>
-        </div>
-    </section>
-    
-    <div class="neon-line"></div>
-    
-    <!-- Address Section -->
-    <section class="address-section">
-        <h2 class="section-title neon-text">زورنا</h2>
-        <div class="address">
-            <i class="fas fa-map-marker-alt" style="color: #ff0000; margin-bottom: 1rem; font-size: 2rem;"></i>
-            <p>📍 53 شارع محمد سعيد أحمد، حلوان</p>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <p>© 2023 صالون LilloCuts للحلاقة. جميع الحقوق محفوظة.</p>
-    </footer>
-    
-    <script>
-        // Add additional interactive animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctaButtons = document.querySelectorAll('.cta-button');
-            
-            ctaButtons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.animation = 'none';
-                    void this.offsetWidth; // Trigger reflow
-                    this.style.animation = 'pulsate 0.5s infinite alternate';
-                });
-                
-                button.addEventListener('mouseleave', function() {
-                    this.style.animation = '';
-                });
-            });
-            
-            // Add parallax effect to hero section
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const hero = document.querySelector('.hero');
-                hero.style.transform = `translateY(${scrolled * 0.4}px)`;
-            });
-        });
-    </script>
+  <header>
+    <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
+    <h1>LilloCuts</h1>
+  </header>
+
+  <section class="contact">
+    <p><i class="fas fa-phone"></i> <a href="tel:+201145651307" style="color:#e50914;">01145651307</a></p>
+    <p><i class="fas fa-phone"></i> <a href="tel:+201064396010" style="color:#e50914;">01064396010</a></p>
+    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/201145651307" target="_blank" style="color:#e50914;">WhatsApp 1</a></p>
+    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/201064396010" target="_blank" style="color:#e50914;">WhatsApp 2</a></p>
+  </section>
+
+  <div class="social-icons">
+    <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <footer>
+    📍 53 Mohamed Said Ahmed Street, Helwan
+  </footer>
 </body>
 </html>
