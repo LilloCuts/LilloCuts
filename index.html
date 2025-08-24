@@ -12,7 +12,6 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
-    /* Neon Animated Background */
     body {
       background: linear-gradient(270deg, #ff1a1a, #ff6600, #ff1a1a, #ff6600);
       background-size: 800% 800%;
@@ -26,7 +25,6 @@
       100%{background-position:0% 50%}
     }
 
-    /* Neon text glow animation */
     .neon-text {
       color: #fff;
       text-shadow: 0 0 5px #ff1a1a, 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #ff1a1a;
@@ -38,7 +36,6 @@
       100%{text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 40px #ff1a1a}
     }
 
-    /* Neon Button */
     .neon-btn {
       background-color: rgba(0,0,0,0.6);
       border: 2px solid #ff1a1a;
@@ -53,7 +50,6 @@
       box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 30px #ff1a1a,0 0 50px #ff1a1a inset;
     }
 
-    /* Neon Social Icons */
     .social-neon {
       text-shadow:0 0 5px currentColor,0 0 10px currentColor,0 0 20px currentColor,0 0 40px currentColor;
       transition: transform 0.3s, text-shadow 0.3s;
@@ -63,7 +59,6 @@
       text-shadow:0 0 10px currentColor,0 0 20px currentColor,0 0 30px currentColor,0 0 50px currentColor;
     }
 
-    /* Neon QR */
     .qr-neon {
       border: 4px solid #ff1a1a;
       box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 30px #ff1a1a,0 0 50px #ff1a1a inset;
@@ -75,7 +70,6 @@
       box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a,0 0 60px #ff1a1a,0 0 100px #ff1a1a inset;
     }
 
-    /* Hero Image Animation */
     .hero-img {
       border-radius: 50%;
       border: 4px solid #ff1a1a;
@@ -109,25 +103,65 @@
     </div>
   </section>
 
-  <!-- Contact Section Example -->
+  <!-- About Section -->
   <section class="py-16 px-6 bg-black/60">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-10">Contact Us</h2>
-    <div class="text-center space-y-4">
-      <p><i class='bx bx-phone text-red-500'></i> 01145651307 / 01064396010</p>
-      <p><i class='bx bx-map text-red-500'></i> 53 Mohamed Said Ahmed St, Helwan</p>
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1200">
+        <img src="https://i.postimg.cc/mkR0D74r/Screenshot-2025-08-24-at-06-12-32-Instagram.png" 
+             alt="Owner" class="rounded-2xl shadow-xl border-4 border-red-600 hero-img">
+      </div>
+      <div class="md:w-1/2 space-y-4" data-aos="fade-left" data-aos-duration="1200">
+        <h2 class="text-3xl font-bold text-red-600 neon-text">About Us</h2>
+        <p class="text-gray-300 leading-relaxed neon-text">
+          At <span class="text-red-500 font-bold neon-text">LilloCuts</span>, 
+          we deliver modern and classic styles with precision. Our mission is to make every client feel 
+          confident, sharp, and fresh with every cut.
+        </p>
+        <a href="tel:01145651307" class="neon-btn inline-block px-6 py-3 font-semibold text-white">📞 Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="py-16 px-6 bg-black/50">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon-text">Gallery</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <img src="https://i.postimg.cc/zDkpns5v/Screenshot-2025-08-24-at-05-45-21-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in">
+      <img src="https://i.postimg.cc/sgMcC1WG/Screenshot-2025-08-24-at-05-43-04-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://i.postimg.cc/DZPQPX9H/Screenshot-2025-08-24-at-05-41-31-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://i.postimg.cc/SRQ6TKqs/Screenshot-2025-08-24-at-05-40-38-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="600">
+    </div>
+  </section>
+
+  <!-- Working Hours -->
+  <section class="py-16 px-6 bg-black/60">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-6 neon-text">Working Hours</h2>
+    <p class="text-center text-gray-300 neon-text" data-aos="fade-up">Everyday: <span class="font-semibold">3:00 PM – 12:00 AM</span></p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16 px-6 bg-black/70">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon-text">Contact Us</h2>
+    <div class="text-center space-y-4" data-aos="fade-up">
+      <p class="neon-text"><i class='bx bx-phone text-red-500'></i> 01145651307 / 01064396010</p>
+      <p class="neon-text"><i class='bx bx-map text-red-500'></i> 53 Mohamed Said Ahmed St, Helwan</p>
       <div class="flex justify-center gap-6 mt-4 text-3xl">
         <a href="https://wa.me/201145651307" target="_blank" class="social-neon text-green-500"><i class='bx bxl-whatsapp'></i></a>
         <a href="https://www.tiktok.com/@lillo_cuts" target="_blank" class="social-neon text-pink-500"><i class='bx bxl-tiktok'></i></a>
         <a href="https://www.instagram.com/lillo_cuts" target="_blank" class="social-neon text-red-500"><i class='bx bxl-instagram'></i></a>
       </div>
+      <div class="mt-6 space-x-4">
+        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Book Now</a>
+        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Get Directions</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer with QR -->
+  <!-- Footer -->
   <footer class="bg-black/70 py-6 text-center border-t border-gray-800">
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://LilloCuts.github.io/lillocuts" 
          alt="QR Code" class="mx-auto mb-4 animate-pulse qr-neon">
-    <p class="text-gray-500">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
+    <p class="text-gray-500 neon-text">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
   </footer>
 
   <script>
