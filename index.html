@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LilloCuts Barber Shop</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Animate on Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <style>
-    body {
-      background: linear-gradient(270deg, #ff1a1a, #ff6600, #ff1a1a, #ff6600);
-      background-size: 800% 800%;
-      animation: neonBG 15s ease infinite;
-      color: white;
-      font-family: sans-serif;
-    }
-    @keyframes neonBG {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-
-    .neon-text {
-      color: #fff;
+    /* Neon Text Effect */
+    .neon {
+      color: #ff1a1a;
       text-shadow: 0 0 5px #ff1a1a, 0 0 10px #ff1a1a, 0 0 20px #ff1a1a, 0 0 40px #ff1a1a;
-      animation: flicker 2s infinite alternate;
+      animation: flicker 1.5s infinite alternate;
     }
     @keyframes flicker {
-      0%{text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 40px #ff1a1a}
-      50%{text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 50px #fff}
-      100%{text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 40px #ff1a1a}
+      0% { text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 40px #ff1a1a;}
+      50% { text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff,0 0 50px #fff;}
+      100% { text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 40px #ff1a1a;}
     }
 
     .neon-btn {
-      background-color: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.6);
       border: 2px solid #ff1a1a;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
       text-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a;
-      box-shadow:0 0 5px #ff1a1a,0 0 10px #ff1a1a,0 0 20px #ff1a1a inset;
+      box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a inset;
       transition: all 0.3s ease;
+      display: inline-block;
     }
     .neon-btn:hover {
-      background-color: #ff1a1a;
+      background: #ff1a1a;
       color: #fff;
       text-shadow:0 0 10px #fff,0 0 20px #fff,0 0 30px #fff;
-      box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 30px #ff1a1a,0 0 50px #ff1a1a inset;
+      box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset;
+    }
+
+    .hero-img {
+      border-radius: 50%;
+      border: 4px solid #ff1a1a;
+      box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset;
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset; }
+      50% { transform: scale(1.05); box-shadow:0 0 30px #fff,0 0 60px #fff inset; }
+      100% { transform: scale(1); box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset; }
     }
 
     .social-neon {
       text-shadow:0 0 5px currentColor,0 0 10px currentColor,0 0 20px currentColor,0 0 40px currentColor;
-      transition: transform 0.3s, text-shadow 0.3s;
+      transition: all 0.3s ease;
     }
     .social-neon:hover {
       transform: scale(1.3);
@@ -61,107 +63,82 @@
 
     .qr-neon {
       border: 4px solid #ff1a1a;
-      box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a,0 0 30px #ff1a1a,0 0 50px #ff1a1a inset;
+      box-shadow:0 0 10px #ff1a1a,0 0 20px #ff1a1a inset;
       border-radius: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .qr-neon:hover {
       transform: scale(1.1);
-      box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a,0 0 60px #ff1a1a,0 0 100px #ff1a1a inset;
-    }
-
-    .hero-img {
-      border-radius: 50%;
-      border: 4px solid #ff1a1a;
-      box-shadow: 0 0 20px #ff1a1a, 0 0 40px #ff1a1a inset;
-      animation: pulse 2s infinite alternate;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset; }
-      50% { transform: scale(1.05); box-shadow:0 0 30px #fff,0 0 60px #fff inset; }
-      100% { transform: scale(1); box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a inset; }
+      box-shadow:0 0 20px #ff1a1a,0 0 40px #ff1a1a,0 0 60px #ff1a1a inset;
     }
   </style>
 </head>
-<body>
+<body class="bg-black text-white">
 
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-black/40"></div>
+  <section class="relative h-screen flex items-center justify-center bg-black/70">
+    <div class="absolute inset-0 bg-black/60"></div>
     <div class="relative z-10 text-center">
-      <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" 
-           alt="Logo" class="mx-auto w-44 hero-img">
-      <h1 class="text-7xl font-extrabold mt-6 neon-text">LilloCuts</h1>
-      <p class="text-2xl mt-4 tracking-widest text-gray-300 neon-text">Barber Shop</p>
-      <p class="mt-4 text-gray-400 italic neon-text">Sharp Cuts, Sharp Looks ✂️</p>
+      <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" class="mx-auto w-44 hero-img" alt="Logo">
+      <h1 class="text-6xl font-extrabold mt-6 neon">LilloCuts</h1>
+      <p class="text-xl mt-2 tracking-widest neon">Barber Shop</p>
+      <p class="mt-4 italic neon">Sharp Cuts, Sharp Looks ✂️</p>
       <div class="mt-6 flex justify-center gap-4 flex-wrap">
-        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" 
-           target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Book Now</a>
-        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" 
-           target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Get Directions</a>
+        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" target="_blank" class="neon-btn">Book Now</a>
+        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" target="_blank" class="neon-btn">Get Directions</a>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="py-16 px-6 bg-black/60">
-    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
-      <div class="md:w-1/2" data-aos="fade-right" data-aos-duration="1200">
-        <img src="https://i.postimg.cc/mkR0D74r/Screenshot-2025-08-24-at-06-12-32-Instagram.png" 
-             alt="Owner" class="rounded-2xl shadow-xl border-4 border-red-600 hero-img">
-      </div>
-      <div class="md:w-1/2 space-y-4" data-aos="fade-left" data-aos-duration="1200">
-        <h2 class="text-3xl font-bold text-red-600 neon-text">About Us</h2>
-        <p class="text-gray-300 leading-relaxed neon-text">
-          At <span class="text-red-500 font-bold neon-text">LilloCuts</span>, 
-          we deliver modern and classic styles with precision. Our mission is to make every client feel 
-          confident, sharp, and fresh with every cut.
-        </p>
-        <a href="tel:01145651307" class="neon-btn inline-block px-6 py-3 font-semibold text-white">📞 Call Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery -->
   <section class="py-16 px-6 bg-black/50">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon-text">Gallery</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <img src="https://i.postimg.cc/zDkpns5v/Screenshot-2025-08-24-at-05-45-21-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in">
-      <img src="https://i.postimg.cc/sgMcC1WG/Screenshot-2025-08-24-at-05-43-04-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="200">
-      <img src="https://i.postimg.cc/DZPQPX9H/Screenshot-2025-08-24-at-05-41-31-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="400">
-      <img src="https://i.postimg.cc/SRQ6TKqs/Screenshot-2025-08-24-at-05-40-38-Instagram.png" class="rounded-xl shadow-lg transform transition hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="600">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <img src="https://i.postimg.cc/mkR0D74r/Screenshot-2025-08-24-at-06-12-32-Instagram.png" class="rounded-2xl shadow-xl border-4 border-red-600 hero-img" alt="Owner">
+      </div>
+      <div class="md:w-1/2 space-y-4" data-aos="fade-left">
+        <h2 class="text-3xl font-bold text-red-600 neon">About Us</h2>
+        <p class="text-gray-300 leading-relaxed neon">
+          At <span class="text-red-500 font-bold neon">LilloCuts</span>, we deliver modern and classic styles with precision. Our mission is to make every client feel confident, sharp, and fresh with every cut.
+        </p>
+        <a href="tel:01145651307" class="neon-btn">📞 Call Now</a>
+      </div>
     </div>
   </section>
 
-  <!-- Working Hours -->
-  <section class="py-16 px-6 bg-black/60">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-6 neon-text">Working Hours</h2>
-    <p class="text-center text-gray-300 neon-text" data-aos="fade-up">Everyday: <span class="font-semibold">3:00 PM – 12:00 AM</span></p>
+  <!-- Gallery Section -->
+  <section class="py-16 px-6 bg-black/50">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon">Gallery</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <img src="https://i.postimg.cc/zDkpns5v/Screenshot-2025-08-24-at-05-45-21-Instagram.png" class="rounded-xl shadow-lg hover:scale-105 hero-img" data-aos="zoom-in">
+      <img src="https://i.postimg.cc/sgMcC1WG/Screenshot-2025-08-24-at-05-43-04-Instagram.png" class="rounded-xl shadow-lg hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://i.postimg.cc/DZPQPX9H/Screenshot-2025-08-24-at-05-41-31-Instagram.png" class="rounded-xl shadow-lg hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://i.postimg.cc/SRQ6TKqs/Screenshot-2025-08-24-at-05-40-38-Instagram.png" class="rounded-xl shadow-lg hover:scale-105 hero-img" data-aos="zoom-in" data-aos-delay="600">
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="py-16 px-6 bg-black/70">
-    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon-text">Contact Us</h2>
-    <div class="text-center space-y-4" data-aos="fade-up">
-      <p class="neon-text"><i class='bx bx-phone text-red-500'></i> 01145651307 / 01064396010</p>
-      <p class="neon-text"><i class='bx bx-map text-red-500'></i> 53 Mohamed Said Ahmed St, Helwan</p>
+  <section class="py-16 px-6 bg-black/60">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-10 neon">Contact Us</h2>
+    <div class="text-center space-y-4">
+      <p class="neon"><i class='bx bx-phone text-red-500'></i> 01145651307 / 01064396010</p>
+      <p class="neon"><i class='bx bx-map text-red-500'></i> 53 Mohamed Said Ahmed St, Helwan</p>
       <div class="flex justify-center gap-6 mt-4 text-3xl">
         <a href="https://wa.me/201145651307" target="_blank" class="social-neon text-green-500"><i class='bx bxl-whatsapp'></i></a>
         <a href="https://www.tiktok.com/@lillo_cuts" target="_blank" class="social-neon text-pink-500"><i class='bx bxl-tiktok'></i></a>
         <a href="https://www.instagram.com/lillo_cuts" target="_blank" class="social-neon text-red-500"><i class='bx bxl-instagram'></i></a>
       </div>
-      <div class="mt-6 space-x-4">
-        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Book Now</a>
-        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" target="_blank" class="neon-btn px-6 py-3 font-semibold text-white">Get Directions</a>
+      <div class="mt-6 flex justify-center gap-4 flex-wrap">
+        <a href="https://wa.me/201145651307?text=Hello%20I%20would%20like%20to%20book%20a%20cut" target="_blank" class="neon-btn">Book Now</a>
+        <a href="https://www.google.com/maps?q=29.8473316,31.3270432" target="_blank" class="neon-btn">Get Directions</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-black/70 py-6 text-center border-t border-gray-800">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://LilloCuts.github.io/lillocuts" 
-         alt="QR Code" class="mx-auto mb-4 animate-pulse qr-neon">
-    <p class="text-gray-500 neon-text">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://LilloCuts.github.io/lillocuts" class="mx-auto mb-4 qr-neon" alt="QR Code">
+    <p class="text-gray-500 neon">© 2025 LilloCuts Barber Shop. All rights reserved.</p>
   </footer>
 
   <script>
