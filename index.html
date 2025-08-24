@@ -10,17 +10,29 @@
   <!-- Animate on Scroll -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    /* Neon effect for LilloCuts */
+    .neon {
+      color: #ff1a1a;
+      text-shadow:
+        0 0 5px #ff1a1a,
+        0 0 10px #ff1a1a,
+        0 0 20px #ff1a1a,
+        0 0 40px #ff0000;
+    }
+  </style>
 </head>
 <body class="bg-black text-white font-sans">
 
   <!-- Hero Section -->
   <section class="relative bg-cover bg-center h-screen flex items-center justify-center" 
            style="background-image: url('https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg');">
-    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0 bg-black/80"></div>
     <div class="relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1200">
       <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" 
-           alt="Logo" class="mx-auto w-40 rounded-full border-4 border-red-600 shadow-lg animate-bounce">
-      <h1 class="text-5xl font-extrabold mt-6 text-red-600">LilloCuts</h1>
+           alt="Logo" class="mx-auto w-40 rounded-full border-4 border-red-600 shadow-xl animate-pulse">
+      <h1 class="text-6xl font-extrabold mt-6 neon">LilloCuts</h1>
       <p class="text-xl mt-2 tracking-widest text-gray-300">Barber Shop</p>
       <p class="mt-4 text-gray-400 italic">Sharp Cuts, Sharp Looks ✂️</p>
     </div>
@@ -33,11 +45,14 @@
         <img src="https://i.postimg.cc/mkR0D74r/Screenshot-2025-08-24-at-06-12-32-Instagram.png" 
              alt="Owner" class="rounded-2xl shadow-xl border-4 border-red-600">
       </div>
-      <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1200">
-        <h2 class="text-3xl font-bold text-red-600 mb-4">About Us</h2>
-        <p class="text-gray-300 leading-relaxed">At <span class="text-red-500 font-bold">LilloCuts</span>, 
+      <div class="md:w-1/2 space-y-4" data-aos="fade-left" data-aos-duration="1200">
+        <h2 class="text-3xl font-bold text-red-600">About Us</h2>
+        <p class="text-gray-300 leading-relaxed">
+          At <span class="text-red-500 font-bold">LilloCuts</span>, 
           we deliver modern and classic styles with precision. Our mission is to make every client feel 
-          confident, sharp, and fresh with every cut.</p>
+          confident, sharp, and fresh with every cut.
+        </p>
+        <a href="tel:01145651307" class="inline-block bg-red-600 px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition">📞 Call Now</a>
       </div>
     </div>
   </section>
