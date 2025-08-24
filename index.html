@@ -9,42 +9,66 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000; /* Black background */
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #330000);
       color: #fff;
       text-align: center;
       overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
 
-    header {
-      padding: 20px;
-      animation: fadeIn 2s ease-in-out;
+    .card {
+      background: rgba(0,0,0,0.85);
+      border: 2px solid #e50914;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0px 0px 20px rgba(229,9,20,0.6);
+      animation: fadeIn 1.5s ease-in-out;
     }
 
-    header img {
-      width: 180px;
+    .card img {
+      width: 150px;
       border-radius: 50%;
+      border: 3px solid #e50914;
       animation: bounceIn 2s ease;
     }
 
-    h1 {
-      font-size: 3rem;
-      color: #e50914; /* Red */
-      font-weight: bold;
-      margin-top: 10px;
-      animation: slideDown 2s ease-in-out;
-    }
-
-    .contact {
-      margin: 30px 0;
-      font-size: 1.2rem;
-      line-height: 2;
-      animation: fadeInUp 2s ease-in-out;
-    }
-
-    .contact a {
+    .card h1 {
+      font-size: 2.5rem;
       color: #e50914;
+      font-weight: bold;
+      margin-top: 15px;
+      animation: slideDown 1.5s ease-in-out;
+    }
+
+    .buttons {
+      margin: 25px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 30px;
       text-decoration: none;
+      color: #fff;
+      background: #e50914;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0px 0px 10px rgba(229,9,20,0.7);
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #e50914;
+      transform: scale(1.05);
     }
 
     .social-icons {
@@ -55,7 +79,7 @@
     .social-icons a {
       text-decoration: none;
       color: #e50914;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin: 0 15px;
       transition: transform 0.3s, color 0.3s;
     }
@@ -66,65 +90,44 @@
     }
 
     footer {
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: 1rem;
       opacity: 0.8;
       animation: fadeIn 3s ease-in-out;
     }
 
     /* Animations */
-    @keyframes fadeIn { 
-      from { opacity: 0; } 
-      to { opacity: 1; } 
-    }
-    @keyframes fadeInUp { 
-      from { opacity: 0; transform: translateY(30px);} 
-      to { opacity: 1; transform: translateY(0);} 
-    }
-    @keyframes slideDown { 
-      from { transform: translateY(-50px); opacity: 0;} 
-      to { transform: translateY(0); opacity: 1;} 
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-40px); opacity: 0;} to { transform: translateY(0); opacity: 1;} }
     @keyframes bounceIn { 
       0% { transform: scale(0.3); opacity: 0;}
       50% { transform: scale(1.1); opacity: 1;}
       70% { transform: scale(0.9);}
       100% { transform: scale(1);}
     }
-    @keyframes zoomIn { 
-      from { transform: scale(0.5); opacity: 0;} 
-      to { transform: scale(1); opacity: 1;} 
-    }
+    @keyframes zoomIn { from { transform: scale(0.5); opacity: 0;} to { transform: scale(1); opacity: 1;} }
   </style>
 </head>
 <body>
-  <header>
+  <div class="card">
     <img src="https://i.postimg.cc/X7W42dwY/527488679-18071593226022280-3121583121494454830-n.jpg" alt="LilloCuts Logo">
     <h1>LilloCuts</h1>
-  </header>
 
-  <section class="contact">
-    <p><i class="fas fa-phone"></i> 
-      <a href="tel:+201145651307">01145651307</a>
-    </p>
-    <p><i class="fas fa-phone"></i> 
-      <a href="tel:+201064396010">01064396010</a>
-    </p>
-    <p><i class="fab fa-whatsapp"></i> 
-      <a href="https://wa.me/201145651307" target="_blank">WhatsApp 1</a>
-    </p>
-    <p><i class="fab fa-whatsapp"></i> 
-      <a href="https://wa.me/201064396010" target="_blank">WhatsApp 2</a>
-    </p>
-  </section>
+    <div class="buttons">
+      <a class="btn" href="tel:+201145651307"><i class="fas fa-phone"></i> Call: 01145651307</a>
+      <a class="btn" href="tel:+201064396010"><i class="fas fa-phone"></i> Call: 01064396010</a>
+      <a class="btn" href="https://wa.me/201145651307" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 1</a>
+      <a class="btn" href="https://wa.me/201064396010" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp 2</a>
+    </div>
 
-  <div class="social-icons">
-    <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
+    <div class="social-icons">
+      <a href="https://www.tiktok.com/@lillo_cuts" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/lillo_cuts" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <footer>
+      📍 53 Mohamed Said Ahmed Street, Helwan
+    </footer>
   </div>
-
-  <footer>
-    📍 53 Mohamed Said Ahmed Street, Helwan
-  </footer>
 </body>
 </html>
